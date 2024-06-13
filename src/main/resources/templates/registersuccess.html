@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{layout}"
+      lang="en">
+    <head>
+        <title>Registration Successful</title>
+    </head>
+    <body>
+    
+    	<section layout:fragment="content">
+    	
+	    	<h2 class="text-center text-success">Registration successful!</h2>
+	    	
+			<div class="w-50 mx-auto text-center"><img th:src="@{/img/indianuncle.png}" class="img-fluid rounded w-80"/></div>
+			
+	        <p class="text-center"><a th:href="@{/login}">You can login here.</a></p>
+	        
+        </section>
+    </body>
+</html>

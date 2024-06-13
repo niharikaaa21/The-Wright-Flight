@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{layout}"
+      lang="en">
+    <head>
+        <title>The Wright Flight</title>
+    </head>
+<body>    
+   	<section layout:fragment="content">
+
+	        <h2 class="text-center my-4">Login Here</h2>
+	        <form th:action="@{/login}" method="post" class="card w-50 mx-auto text-center py-3">
+	            
+	            	<div class="d-flex m-2 align-items-center">
+	            		<label class="w-25" for="username">User Name</label>
+	            		<input class="form-control w-75" placeholder="Name" type="text" name="username" required/>
+	            	</div>
+	            	<div class="d-flex m-2 align-items-center">
+	            		<label class="w-25" for="password">Password</label>
+	            		<input class="form-control w-75" placeholder="Password" type="password" name="password" required/>
+	            	</div>
+	            <div><input type="submit" value="Login" class="btn btn-primary"/></div>
+	        </form>
+	        <div th:if="${param.error}" class="text-danger text-center">
+	            Invalid username and password.
+	        </div>
+	        <div th:if="${param.logout}" class="text-success text-center">
+	            You have been logged out.
+	        </div>
+    </section>
+</body>
+</html>

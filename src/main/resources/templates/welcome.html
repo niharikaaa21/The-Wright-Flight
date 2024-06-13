@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{layout}"
+      lang="en">
+    <head>
+        <title>Welcome Page</title>
+    </head>
+    <body>
+    	<section layout:fragment="content">
+    	
+	    	<h2 class="text-success my-4 text-center" sec:authorize="isAuthenticated()"> Welcome, <span sec:authentication="name"></span>!</h2>
+	    	
+	    	<a th:href="@{/display}" class="text-decoration-none"><div class="card my-3 bg-dark bg-gradient text-white"><div class="row align-items-center">
+	    		<div class="col-8 px-5"><h4 >Search Flights : </h4>Find the perfect flight for your next adventure with our intuitive search tool. Enter your departure city, destination, travel dates, and passenger information, then hit search. Instantly compare prices and schedules from multiple airlines to discover the best options for your journey. With real-time updates and comprehensive search filters, planning your trip has never been easier!</div>
+	    		<div class="col"><img class="rounded img-fluid" th:src='@{/img/travel.png}'/></div>
+			</div></div></a>
+	    	<a th:href="@{/viewbookings}" class="text-decoration-none"><div class="card my-3 bg-light bg-gradient"><div class="row align-items-center">
+	    		<div class="col"><img class="rounded img-fluid" th:src='@{/img/booking.png}'/></div>
+	    		<div class="col-8 px-5"><h4 >View Bookings : </h4>Easily access your booked flights and manage your travel plans in one place. Simply log in to your account and navigate to the "My Bookings" section. Here, you'll find details of your upcoming and past flights, including flight numbers, dates, and destinations. </div>
+	    	</div></div></a>
+	    	<a th:href="@{/logout}" class="text-decoration-none"><div class="card my-3 bg-dark bg-gradient text-white"><div class="row align-items-center">
+	    		<div class="col-8 px-5"><h4 >Logout : </h4>Protect your account and personal information by logging out securely when you're done. Simply click on your profile icon or account settings, then select "Log Out." Confirm your choice, and you'll be safely signed out of your account. Whether you're using a desktop or mobile device, logging out ensures your privacy and security until your next visit.</div>
+	    		<div class="col"><img class="rounded img-fluid" th:src='@{/img/goodbye.png}'/></div>
+	    	</div></div></a>
+        
+        </section>
+    </body>
+</html>

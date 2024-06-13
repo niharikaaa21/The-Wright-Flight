@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{layout}"
+      lang="en">
+    <head>
+        <title>Display Flights </title>
+        <script  th:src="@{/js/display.js}"></script>
+    </head>
+    <body>
+      	<section layout:fragment="content">
+      		<h2 class="text-center my-4">Find the Wright Flight for you!</h2>
+	    	<form class="w-50 mx-auto card p-3 bg-light">
+	    		<div class="d-flex mb-2 align-items-center">
+	    			<label for="origin" class="w-25">Origin</label><input class="w-75 form-control" type="text" name="origin" id="origin" value="Delhi"/>
+	    		</div>
+	    		<div class="d-flex mb-2 align-items-center">
+	    			<label for="destination" class="w-25">Destination</label><input class="w-75 form-control" type="text" name="destination" id="destination" value="Mumbai"/>
+	    		</div>
+	    		<input type="hidden" name="min_price" id="min_price" value="7000"/><input type="hidden" name="max_price" id="max_price" value="11000"/>
+	    		<input type="hidden" name="day" id="day" value="0"/> <!-- Day is an int from 0-6 (0 being Sunday) to search for a flight, wholedate is the day of the flight -->
+	    	 
+		    	<div class="my-2">
+			    	<div class="d-flex mb-2 align-items-center">
+						<label for="amount" class="w-25">Price range</label>
+						<input type="text" class="w-75 form-control" name="amount" id="amount" readonly="" style="color:#f6931f; font-weight:bold;">
+					</div>
+					<div id="price-range"></div>
+				</div>
+				<div class="d-flex mb-2 align-items-center">
+		    		<label for="date_picker" class="w-25">Date</label><input class="w-75 form-control" type="text" id="date_picker"/>
+		    	</div>
+		    	<input class="btn btn-primary" type="button" id="launch" value="View"/>
+	    	</form>
+	    	
+	    	
+	    	
+			<br>
+			
+	        <table id="flightlist" border="1"></table>
+	        <div id="flightpager"></div>
+	
+         </section>
+    </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>SQL Generator For Airlines</title>
+
+	<style></style>
+
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
+	<script
+	src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+	integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+	crossorigin="anonymous"></script>
+	<script
+	src="https://code.jquery.com/color/jquery.color-2.1.2.js"
+	integrity="sha256-1Cn7TdfHiMcEbTuku97ZRSGt2b3SvZftEIn68UMgHC8="
+	crossorigin="anonymous"></script>
+	
+	
+</head>
+
+<body>
+<div id="sql"></div>
+
+<script>
+	const cities = [
+	  "Delhi",
+	  "Mumbai",
+	  "Bengaluru",
+	  "Hyderabad",
+	  "Chennai"
+	];
+	const directRoutes = {
+	    "Delhi-Mumbai": {
+	        distance_km: 1447,
+	        duration_minutes: 135
+	    },
+	    "Delhi-Bengaluru": {
+	        distance_km: 1740,
+	        duration_minutes: 180
+	    },
+	    "Delhi-Hyderabad": {
+	        distance_km: 1547,
+	        duration_minutes: 150
+	    },
+	    "Delhi-Chennai": {
+	        distance_km: 1758,
+	        duration_minutes: 170
+	    },
+	    "Mumbai-Bengaluru": {
+	        distance_km: 984,
+	        duration_minutes: 105
+	    },
+	    "Mumbai-Hyderabad": {
+	        distance_km: 622,
+	        duration_minutes: 75
+	    },
+	    "Mumbai-Chennai": {
+	        distance_km: 1335,
+	        duration_minutes: 135
+	    },
+	    "Bengaluru-Hyderabad": {
+	        distance_km: 569,
+	        duration_minutes: 60
+	    },
+	    "Bengaluru-Chennai": {
+	        distance_km: 346,
+	        duration_minutes: 40
+	    },
+	    "Hyderabad-Chennai": {
+	        distance_km: 625,
+	        duration_minutes: 65
+	    }
+	};
+	const indianAirlines = ["Air India", "IndiGo", "SpiceJet", "Vistara", "GoAir"];
+	const logos = ["img/airindia.png", "img/indigo.png", "img/spicejet.png", "img/vistara.png", "img/goair.png"];
+
+
+	const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+	const daysCount = [0,1,2,3,4,5,6];
+
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	function getRandomValuesFromArray(array, x) {
+	    // Create a copy of the original array to avoid modifying it
+	    const copyArray = array.slice();
+	    
+	    // Check if the number of values to pick is greater than the length of the array
+	    if (x > copyArray.length) {
+	        console.error("Error: Number of values to pick is greater than the length of the array.");
+	        return;
+	    }
+	    
+	    const result = [];
+	    
+	    for (let i = 0; i < x; i++) {
+	        // Generate a random index within the range of remaining elements
+	        const randomIndex = Math.floor(Math.random() * copyArray.length);
+	        
+	        // Remove the selected element from the copy array and push it to the result
+	        result.push(copyArray.splice(randomIndex, 1)[0]);
+	    }
+	    
+	    return result;
+	}
+
+	sql = "INSERT INTO PUBLIC.PUBLIC.FLIGHTS \n (COMPANY_NAME, COMPANY_LOGO, DELAY, DEPARTURE_TIME, DESTINATION, DISTANCE, DURATION, FLIGHT_NAME, ORIGIN, PRICE, SCHEDULE) VALUES ";
+
+	for(let j = 0; j < 1000; j++){
+		var airline_id = getRandomInt(0,4);
+		var route_array = getRandomValuesFromArray(cities,2);
+		var schedule_array = getRandomValuesFromArray(daysCount,getRandomInt(3,7));
+		var departure_time = ("0"+getRandomInt(0,23)).slice(-2)+":"+("0"+(getRandomInt(0,11)*5)).slice(-2);
+		var flight_name = indianAirlines[airline_id]+" "+getRandomInt(100,800);
+		var price = getRandomInt(6000,12000);
+		var delay = getRandomInt(0,12)*10;
+		if(directRoutes[route_array[0]+"-"+route_array[1]] != null){
+			current_route = directRoutes[route_array[0]+"-"+route_array[1]];
+		}
+		else{
+			current_route = directRoutes[route_array[1]+"-"+route_array[0]];
+		}
+
+		sql += "('"+indianAirlines[airline_id]+"', '"+logos[airline_id]+"', "+delay+", '"+departure_time+"', '"+route_array[1]+"', "+current_route["distance_km"]+", "+current_route["duration_minutes"]+", '"+flight_name+"', '"+route_array[0]+"', "+price+", '"+schedule_array.toString(',')+"')";
+		if(j<999){sql += ",\n"}
+		else{sql += ";"}
+	}
+
+	$("#sql").text(sql);
+
+</script>
+</body>
+</html>

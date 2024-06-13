@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{layout}"
+      lang="en">
+    <head>
+        <title>Book Ticket</title>
+    </head>
+    <body>
+    
+    	<section layout:fragment="content">
+    	
+	    	<h2 class="text-center my-4">Book Your Ticket Here</h2>
+	    	
+	        <div class="card w-50 p-3 bg-light mx-auto">
+	        	<div class="d-flex mb-2 align-items-center">
+				    <label for="passenger_name" class="w-25">Passenger name</label>
+				    <input class="w-75 form-control" type="text" placeholder="Name" name="passenger_name" id="passenger_name" required value=""/>
+				</div>
+				<div class="d-flex mb-2 align-items-center">
+				    <label for="passenger_age" class="w-25">Passenger age</label>
+				    <input class="w-75 form-control" type="text" placeholder="Age" name="passenger_age" id="passenger_age" required value=""/>
+				</div>
+				<div class="d-flex mb-2 align-items-center">
+				    <label for="passenger_number" class="w-25">Passenger number</label>
+				    <input class="w-75 form-control" type="text" placeholder="00000 00000" name="passenger_number" id="passenger_number" value=""/>
+				</div>
+				<div class="d-flex mb-2 align-items-center">
+				    <label for="passenger_email" class="w-25">Passenger e-mail</label>
+				    <input class="w-75 form-control" type="email" placeholder="email@email.com" name="passenger_email" id="passenger_email" value=""/>
+				</div>
+	            <div class="text-center"><a th:href="@{/flightbooked}"><button class="btn btn-primary">Book ticket</button></a></div>
+	        </div>
+        
+        </section>
+    </body>
+</html>

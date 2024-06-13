@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+       <!-- jQuery -->
+       <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css"/>
+       <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'/>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+       
+       <!-- Bootstrap -->
+       <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet'/>
+       <!-- <link th:href="@{/css/bootstrap.min.css}" rel='stylesheet'/> -->
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- jqgrid -->
+       <script  th:src="@{/js/jquery.jqGrid.min.js}"></script>
+       <script  th:src="@{/js/grid.locale-en.js}"></script>
+       
+       <!-- Custom js -->
+       <script  th:src="@{/js/myfunctions.js}"></script>
+       
+       <!-- Custom css -->
+       <link th:href='@{/css/airlines.css}' rel='stylesheet'/>
+       
+</head>
+
+<body>
+<div class="container">
+	<header th:replace="~{fragments/header :: header}"></header>
+	<section layout:fragment="content"></section>
+	<footer th:replace="~{fragments/footer :: footer}"></footer>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{layout}"
+      lang="en">
+    <head>
+        <title>View Bookings </title>
+        <script  th:src="@{/js/viewbookings.js}"></script>
+    </head>
+    <body>
+    <section layout:fragment="content">
+	    <!-- <input sec:authorize="!isAuthenticated()"type="button" value="Login!"/>
+	    <input sec:authorize="isAuthenticated()"type="button" value="Logout!"/> -->
+	    <h2 class="text-center my-4" sec:authorize="isAuthenticated()">
+	      Here are your bookings, <span sec:authentication="name"></span>!</h2>
+      
+      	<marquee><div class="text-secondary">Departure Time and Arrival Time are shown with current delay!</div></marquee>
+        <table id="bookinglist" border="1"></table>
+        <div id="bookingpager"></div>
+
+    </section>
+        
+    </body>
+</html>

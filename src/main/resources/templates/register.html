@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{layout}"
+      lang="en">
+    <head>
+        <title>Be one of us!</title>
+    </head>
+<body>    
+   	<section layout:fragment="content">
+
+	        <h2 class="text-center my-4">Register Here</h2>
+	        <form th:action="@{/register}" method="post" class="card w-50 mx-auto text-center py-3">
+	            
+	            	<div class="d-flex m-2 align-items-center">
+	            		<label class="w-25" for="username">User Name</label>
+	            		<input class="form-control w-75" type="text" name="username" required/>
+	            	</div>
+	            	<div class="d-flex m-2 align-items-center">
+	            		<label class="w-25" for="password">Password</label>
+	            		<input class="form-control w-75" type="password" name="password" required/>
+	            	</div>
+	            <div><input type="submit" value="Register" class="btn btn-primary"/></div>
+	        </form>
+    </section>
+</body>
+</html>

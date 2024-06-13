@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{layout}"
+      lang="en">
+
+<head>
+    <title>Flight Booked</title>
+</head>
+<body>
+
+	<section layout:fragment="content">
+		<h2 class="text-center text-success my-4">Your flight has been booked successfully!</h2>
+		
+		<div class="text-center"><img th:src="@{/img/ticketbooked.png}" class="img-fluid rounded w-50"></div>
+		 
+		 <p class="text-center"><a th:href="@{/viewbookings}" class="view2">View your bookings here.</a></p>
+	    
+	</section>
+
+    
+</body>
+</body>
+</html>
