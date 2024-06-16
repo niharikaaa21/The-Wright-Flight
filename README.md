@@ -5,18 +5,18 @@
 
 
 ## Overview :
-This project aims to develop an Android app for customized skincare, prioritizing a user- friendly interface that caters to skincare enthusiasts. This app will not only design a skincare routine based on the skin concern of the user, but also provide the active ingredients to be used for solving the problem and give product recommendations based on their particular skin type and skin concerns.
+This project is an airline booking and delay tracking website that I developed as a part of my internship. This website has a local database of flights and fetches the relevant flights than can be booked according to the filters applied by the user. The displayed flights can be filtered according to parameters like increasing or decreasing price, among others. Once booked, the updated departure time due to the delay of the flight is shown for the flight, along with the status on the bookings page. The user can track the remaining time left for departure and the progress of the flight once it takes off, both of which are dynamic and updated timely.
 
 ## Project Demonstration :
 
 ### Demo video :
-https://github.com/niharikaaa21/GoodSkin-Wellness-App/assets/102322171/e049884e-e40a-4aff-a6be-583884b970bf
+https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/1453e58b-32bc-43d5-a9ed-f355c5efa1e2
 
 ### Screenshots :
 
-|      Home Page                     | Choosing Skin Type                         | Routine for Skin Type|
-|----------------------------------|----------------------------------|----------------------------------|
-| ![Home_Page](https://github.com/niharikaaa21/GoodSkin-Wellness-App/assets/102322171/16346f37-5fd9-4d7d-b21a-ac88adeed4f8)       | ![Choosing_Skin_Type](https://github.com/niharikaaa21/GoodSkin-Wellness-App/assets/102322171/7ff0da66-8645-4ad5-8bfc-a3df10b664e2) | ![Routine_for_Skin_Type](https://github.com/niharikaaa21/GoodSkin-Wellness-App/assets/102322171/ab63bf54-5f97-456f-94d6-69fb5a1771f8)       |
+|      Login Page                     | Welcome Page |
+|----------------------------------|----------------------------------|
+| ![Login Page](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/d914a297-e6d7-4a8b-b4c7-7c85dc316c65)       | ![Welcome Page](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/20d7d7c3-35f0-4036-bf24-2935a3a0f896) |
 
 | Recommended Product Link Working                         | Choose Skin Concern                          | Routine for Skin Concern                         |
 |----------------------------------|----------------------------------|----------------------------------|
