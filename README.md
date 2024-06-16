@@ -1,6 +1,5 @@
 # The-Wright-Flight
 
-![Icon](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/0b16361b-bda5-4942-b133-74fc89a58c73)
 ![Icon](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/5d6320cb-f0e5-4ff1-9e5a-62553c04cfb6)
 
 
