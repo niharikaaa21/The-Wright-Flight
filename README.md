@@ -18,9 +18,9 @@ https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/1453e58b-32bc
 |----------------------------------|----------------------------------|
 | ![Login Page](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/d914a297-e6d7-4a8b-b4c7-7c85dc316c65)       | ![Welcome Page](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/20d7d7c3-35f0-4036-bf24-2935a3a0f896) |
 
-| Search Flights                         | Flight Search Results                         |
-|----------------------------------|----------------------------------|----------------------------------|
-| ![Search Flights](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/5fec1f88-52d5-4a09-88c2-19478bcdfa67)| ![Flight Search Results](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/37eda1ce-11df-42a8-8118-22684fab3b8d)|
+|      Search Flights                     | Flight Search Results |
+|----------------------------------|----------------------------------|
+| ![Search Flights](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/5fec1f88-52d5-4a09-88c2-19478bcdfa67)       | ![Flight Search Results](https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/37eda1ce-11df-42a8-8118-22684fab3b8d) |
 
 |      Bookings Page                     | Fligth Delays Shown |
 |----------------------------------|----------------------------------|
