@@ -65,4 +65,5 @@ https://github.com/niharikaaa21/The-Wright-Flight/assets/102322171/1453e58b-32bc
 - jqGrid : For displaying the flight and bookings data to the user.
 - Spring Boot : Java framework used for development.
 - Java : Language used for backend.
+- HSQLDB : Database used for storing user, flights and booking information.
 - Eclipse EE : I used Eclipse Enterprise Edition to make this website.
